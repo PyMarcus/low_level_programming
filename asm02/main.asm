@@ -40,20 +40,20 @@ _start:
     mov ebx, STD_IN
     mov ecx, name 
     mov edx, 0xF
-    int SYS_CALL
+    int SYS_CALL         ; stdin -> name
     
     ; print operation shows the result
     mov eax, SYS_WRITE
     mov ebx, STD_OUT
     mov ecx, theName
     mov edx, sizeTheName
-    int SYS_CALL
+    int SYS_CALL        ; stdout -> theName
     
     mov eax, SYS_WRITE
     mov ebx, STD_OUT
     mov ecx, name 
     mov edx, 0xF
-    int SYS_CALL
+    int SYS_CALL        ; stdout -> name
     
     ; end
     mov eax, SYS_EXIT
